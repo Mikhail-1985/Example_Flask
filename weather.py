@@ -1,6 +1,8 @@
-import requests
+import requests #библиотека работающая с запросами
 import settings
 
+# пишем функцию запроса погоды,
+# создаем и использем словарь с нужными нам параметрами и нужным городом
 def weather_by_city(city_name):
     weather_url = "http://api.worldweatheronline.com/premium/v1/weather.ashx"
     params = {
@@ -10,8 +12,9 @@ def weather_by_city(city_name):
         "num_of_days": 1,
         "lang": "ru",
     }
-    result = requests.get(weather_url, params=params)
-    weather = result.json()
+    result = requests.get(weather_url, params=params) # получаем результат запроса и заисываем его в переменную
+    weather = result.json() # приводим результат к формату json
+    # Если есть нужная нам информация - возвращаем её, иначе False
     if 'data' in weather:
         if 'current_condition' in weather['data']:
             try:
