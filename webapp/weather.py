@@ -1,12 +1,12 @@
 import requests #библиотека работающая с запросами
-import settings
+from flask import current_app
 
 # пишем функцию запроса погоды,
 # создаем и использем словарь с нужными нам параметрами и нужным городом
 def weather_by_city(city_name):
-    weather_url = "http://api.worldweatheronline.com/premium/v1/weather.ashx"
+    weather_url = current_app.config['WEATHER_URL']
     params = {
-        "key": settings.API_KEY,
+        "key": current_app.config['WEATHER_API_KEY'],
         "q": city_name,
         "format": "json",
         "num_of_days": 1,
@@ -29,4 +29,4 @@ def weather_by_city(city_name):
     return False
 
 if __name__ == "__main__":
-    print(weather_by_city('Petersburg,Russia'))
+    print(weather_by_city(current_app.config['WEATHER_DEFAULT_CITY']))
