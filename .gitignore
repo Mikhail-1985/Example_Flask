@@ -2,6 +2,7 @@
 config.py
 webapp/config.py
 /webapp/config.py
+.config.py
 
 # Environments
 .env
