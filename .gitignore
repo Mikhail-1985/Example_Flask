@@ -1,5 +1,5 @@
 # пароли
-settings.py
+config.py
 
 # Environments
 .env
@@ -20,3 +20,6 @@ __pycache__
 .vscode/
 vscode
 vscode/
+
+#DATA
+*.db
