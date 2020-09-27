@@ -1,5 +1,6 @@
 import os
 
+
 basedir = os.path.abspath(os.path.dirname(__file__)) #абсолютный путь до этой папки
 
 WEATHER_DEFAULT_CITY = "Petersburg,Russia"
