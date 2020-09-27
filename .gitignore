@@ -1,6 +1,6 @@
 # settings
 config.py
-webapp\config.py
+webapp/config.py
 
 # Environments
 .env
