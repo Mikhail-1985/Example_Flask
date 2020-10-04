@@ -1,4 +1,5 @@
 import requests #библиотека работающая с запросами
+
 from flask import current_app
 
 # пишем функцию запроса погоды,
