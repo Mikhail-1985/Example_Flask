@@ -1,5 +1,5 @@
 from webapp.db import db
-from datetime import datetime
+
 
 class News(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -1,4 +1,4 @@
-from getpass import getpass # для ввода пароля из командной строки
+from getpass import getpass  # для ввода пароля из командной строки
 import sys
 
 from webapp import create_app
@@ -22,6 +22,6 @@ with app.app_context():
     new_user = User(username=username, role='admin')
     new_user.set_password(password)
 
-    db.session.add(new_user) #добавление в базу двнных
-    db.session.commit() # коммит в бд
+    db.session.add(new_user)  # добавление в базу двнных
+    db.session.commit()  # коммит в бд
     print(f'User with id {new_user.id} added')

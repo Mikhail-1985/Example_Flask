@@ -1,16 +1,13 @@
 from flask_login import LoginManager
 from flask_migrate import Migrate
-from flask import Flask, render_template, flash, redirect, url_for
+from flask import Flask
 
 from webapp.db import db
 from webapp.admin.views import blueprint as admin_blueprint
 from webapp.news.views import blueprint as news_blueprint
 from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
-from webapp.news.models import News
 from webapp.user.models import User
-from webapp.weather import weather_by_city
-
 
 
 def create_app():
@@ -32,7 +29,3 @@ def create_app():
         return User.query.get(user_id)
 
     return app
-
-
-#set FLASK_APP=webapp && set FLASK_ENV=development && set FLASK_DEBUG=1 && flask run
-
